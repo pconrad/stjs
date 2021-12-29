@@ -10,11 +10,10 @@
 <html lang="en">
   {% include head.html %}
   <body {% if page.draft %}class="draft"{% endif %}>
-    {% include nav.html %}
+    {% include nav.html this=this %}
     <div class="container content">
       {% include header.html this=this %}
       <main>
-        <ul class="toc"></ul>
         {% include terms.html slug=slug %}
         {{ content }}
         {% if this.keypoints %}{% include keypoints.md points=this.keypoints %}{% endif %}
